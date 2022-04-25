@@ -1,0 +1,76 @@
+﻿
+@model Project.Models.Movie
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+                        <span class="card-title" style="text-align:center; font-weight: 200;">
+                            <b>Details: @Html.DisplayFor(model => model.Title)</b>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Imdb Movie ID</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.MovieID)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Movie Name</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.Title)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Director </b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.Director)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>IMDB Rating</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.ImdbRating)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Released Year</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.Year)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Plot</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.Description)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Wikipedia URL</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.URL)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Image URL</b></div>
+                        <div class="col s10">@Html.DisplayFor(model => model.imageURL)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Genre</b></div>
+                        <div class="col s10">
+                            @foreach (var item in Model.Genres)
+                            {
+                <div class="chip">
+                    @Html.DisplayFor(modelItem => item.Genre.GenreName)
+                </div>}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s2"><b>Actors</b></div>
+                        <div class="col s10">
+                            @foreach (var item in Model.Actors)
+                            {
+                <div class="chip">
+                    @Html.DisplayFor(modelItem => item.Actor.ActorName)
+                </div>}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a href="@Model.URL">Visit</a>
+                    <a asp-action="Edit" asp-route-id="@Model.ImdbId" class="btn waves-effect waves-light">Update</a>
+                    <a asp-action="Delete" asp-route-id="@Model.ImdbId" class="btn waves-effect waves-light">Delete</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

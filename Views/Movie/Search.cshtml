@@ -1,0 +1,85 @@
+﻿
+@model IEnumerable<Project.Models.Movie>
+
+@{ 
+    ViewData["Title"] = "Search"; 
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="card">
+                <div class="card-content">
+                    <form asp-action="Search" method="get">
+                        <div class="row center-align">
+                            <h5>Find A Movie To Watch!</h5>
+                            <h6>(Enter at least one field. For the movie name you can enter partial phrases.)</h6>
+                        </div>
+                        <div class="row">
+                            <div class="col m6">
+                                <input placeholder="Movie Name" name="movieName" type="text" class="validate">
+                            </div>
+                            <div class="col m6">
+                                <input placeholder="Director Name" name="directorName" type="text" class="validate">
+                            </div>
+                            <div class="input-field col m4">
+                                <select name="genre">
+                                    <option value="" disabled selected>Choose your option</option>
+                                    @foreach (var item in ViewBag.genreDict.Values)
+                                    {
+                        <option value="@item">@item</option>
+}
+                                </select>
+                                <label>Genre</label>
+                            </div>
+                            <div class="col m4 right-align">
+                                <button class="btn waves-effect waves-light" type="submit" value="Search">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="row s12 center-align">
+            <h4>Following are available to watch </h4>
+        </div>
+
+        @foreach (var item in Model)
+        {
+<div class="row s12">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">
+                <img class="bd-placeholder-img rounded-circle" width="50" height="50" src=@Html.DisplayFor(modelItem => item.imageURL) />
+                @Html.DisplayFor(modelItem => item.Title) &emsp; <div class="chip">@Html.DisplayFor(modelItem => item.ImdbRating)</div>
+            </span>
+            <div class="row">
+                <div class="col s12">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    @foreach (var s in item.Genres)
+                    {
+        <div class="chip">
+            @Html.DisplayFor(modelItem => s.Genre.GenreName)
+        </div>}
+                </div>
+            </div>
+        </div>
+        <div class="card-action">
+            <a href="@item.URL">Wikipedia</a>
+            <a asp-action="Details" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">More Details</a>
+            <a asp-action="Edit" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">Update</a>
+            <a asp-action="Delete" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">Delete</a>
+        </div>
+    </div>
+</div>}
+    </div>
+</div>
