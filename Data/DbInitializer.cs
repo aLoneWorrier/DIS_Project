@@ -173,10 +173,9 @@ namespace Project.Data
                                         Genre = mg
                                     };
                                     context.movie_genre.Add(sp);
-                                    context.SaveChanges();
                                 }
                             }
-
+                            context.SaveChanges();
                         }
                     }
                     context.SaveChanges();

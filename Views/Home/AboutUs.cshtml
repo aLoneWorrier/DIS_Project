@@ -1,57 +1,75 @@
-﻿@{ 
-    ViewData["Title"] = "About Us"; 
-    }
+﻿@{ ViewData["Title"] = "About Us"; }
 
-<div class="container">
-    <ul class="collapsible">
-        <li>
-            <div class="collapsible-header">Meet the Devs</div>
-            <div class="collapsible-body">
-                <main class="top-heading">
-                    <div class="row top-space">
-                        <div class="col-lg-4">
-                            <img class="bd-placeholder-img rounded-circle" width="200" height="200" src="~/img/krishna.jpg" />
-                            <h3>Krishna Sai Madamanchi</h3>
-                            <p>Currently a student at USF's Business Analytics and Information Systems graduate program, Krishna has worked as a python and web developer for about 2 years. He is the main programmer for the website. His contributions include designing the database model to store the data from IMDB API and also helped in developing various pages of the website.</p>
-                            <p><a class="btn btn-secondary" href="https://github.com/aLoneWorrier/">View profile &raquo;</a></p>
-                        </div>
-                        <div class="col-lg-4">
-                            <img class="bd-placeholder-img rounded-circle" width="200" height="200" src="~/img/praveen.jpg" />
-                            <h3>Praveen Samuel Jillella</h3>
-                            <p>A graduate student in Business Analytics and Information Systems at USF .He contributed in designing Visualizations and data pages.</p>
-                            <p><a class="btn btn-secondary" href="https://github.com/praveensamuelj">View profile &raquo;</a></p>
-                        </div>
-                        <div class="col-lg-4">
-                            <img class="bd-placeholder-img rounded-circle" width="200" height="200" src="~/img/jai.png" />
-                            <h3>Jai Kiran Rajana</h3>
-                            <p>Jai is a student at USF's Business Analytics and Information Systems graduate program. His contributions include designing data page, also helped the team with designing logical data model for the database.</p>
-                            <p><a class="btn btn-secondary" href="https://github.com/jaikiran14">View profile &raquo;</a></p>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </li>
-        <li class="active">
-            <div class="collapsible-header">Description and Data Model</div>
-            <div class="collapsible-body">
-                <img id="modelimg" src="~/img/erd.png">
-                <p>
-                    We have used <b>IMDB-API</b> application programming interface.
-                    All the api documents and usage guides are available <a href="https://imdb-api.com/api">here.</a>
-                </p>
-                <p>
-                    The data model essentially contains two many-to-many relationships. One between the entity <b><i>Movie</i></b>
-                    and <b><i>Genres</i></b> and another between <b><i>Movie</i></b> and <b><i>Actor</i></b>. To facilitate
-                    easy transition from logical model to stuctural schema diagram, we have broken down each many-to-many relationship with
-                    two one-to-many relationships.
-                </p>
-                <p>
-                    Below are the api end-points we have used.
-                </p>
-                <b>GET/</b> https://imdb-api.com/en/API/Top250Movies/k_o1j7e1n9 <br>
-                <b>GET/</b> https://imdb-api.com/en/API/Title/k_o1j7e1n9/tt0110413 <br>
-                <b>GET/</b> https://imdb-api.com/en/API/Wikipedia/k_9i34eypr/tt1375666 <br>
-            </div>
-        </li>
-    </ul>
+<div class="tab">
+    <button class="tablinks" onclick="openLink(event, 'Devs')">Meet the Devs</button>
+    <button class="tablinks" onclick="openLink(event, 'DataModel')" id="defaultOpen">Data Model and Description</button>
 </div>
+
+<div id="Devs" class="tabcontent">
+    <main class="top-heading">
+        <div class="row top-space">
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="200" height="200" src="~/img/krishna.jpg" />
+                <h3>Krishna Sai Madamanchi</h3>
+                <p>Currently a student at USF's Business Analytics and Information Systems graduate program, Krishna has worked as a python and web developer for about 2 years. He is the main programmer for the website. His contributions include designing the database model to store the data from IMDB API and also helped in developing various pages of the website.</p>
+                <p><a class="btn btn-secondary" href="https://github.com/aLoneWorrier/">View profile &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="200" height="200" src="~/img/praveen.jpg" />
+                <h3>Praveen Samuel Jillella</h3>
+                <p>A graduate student in Business Analytics and Information Systems at USF .He contributed in designing Visualizations and data pages.</p>
+                <p><a class="btn btn-secondary" href="https://github.com/praveensamuelj">View profile &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="200" height="200" src="~/img/jai.png" />
+                <h3>Jai Kiran Rajana</h3>
+                <p>Jai is a student at USF's Business Analytics and Information Systems graduate program. His contributions include designing data page, also helped the team with designing logical data model for the database.</p>
+                <p><a class="btn btn-secondary" href="https://github.com/jaikiran14">View profile &raquo;</a></p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="DataModel" class="tabcontent">
+    <img id="modelimg" src="~/img/erd.png">
+    <p>
+        We have used <b>IMDB-API</b> application programming interface.
+        All the api documents and usage guides are available <a href="https://imdb-api.com/api">here.</a>
+    </p>
+    <p>
+        The data model essentially contains two many-to-many relationships. One between the entity <b><i>Movie</i></b>
+        and <b><i>Genres</i></b> and another between <b><i>Movie</i></b> and <b><i>Actor</i></b>. To facilitate
+        easy transition from logical model to stuctural schema diagram, we have broken down each many-to-many relationship with
+        two one-to-many relationships.
+    </p>
+    <p>
+        Below are the api end-points we have used.
+    </p>
+    <b>GET/</b> https://imdb-api.com/en/API/Top250Movies/k_o1j7e1n9 <br>
+    <b>GET/</b> https://imdb-api.com/en/API/Title/k_o1j7e1n9/tt0110413 <br>
+    <b>GET/</b> https://imdb-api.com/en/API/Wikipedia/k_9i34eypr/tt1375666 <br>
+</div>
+
+<script>
+    function openLink(evt, linkName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(linkName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+</script>
