@@ -2,13 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 <body>
-    <div class="container-fluid bg-1 text-center">
-        <h3 class="margin">Who Am I?</h3>
-        <img src="~/img/usf-logo-png-2.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-        <h3>I'm an adventurer</h3>
+    <div class="text-center">
+        <img src="~/img/home4.jpg" style="height:450px" class="banner">
     </div>
-    <div class="container-fluid bg-2 text-center">
+    <div class="container-fluid1 bg-2 text-center">
         <h3 class="margin">Want to find a Movie?</h3>
+        <p>Go to the below link and search for a movie listed in our database by entering the keyfields.</p>
         <p>Go to the below link and search for a movie listed in our database by entering the keyfields.</p>
         <a asp-controller="Movie" asp-action="Search" class="btn btn-default btn-lg">
             <span class="glyphicon glyphicon-search"></span> Search
@@ -31,9 +30,9 @@
         background-color: #474e5d; /* Dark Blue */
         color: #ffffff;
     }
-    .container-fluid {
-        padding-top: 70px;
-        padding-bottom: 70px;
+    .container-fluid1 {
+        padding-top: 10px;
+        padding-bottom: 30px;
     }
 
     .margin {
