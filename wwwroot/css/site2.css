@@ -3,6 +3,32 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+@media (min-width:768px) {
+    .search-result-item-body {
+        margin-left: 200px
+    }
+}
+
+@media (min-width:768px) {
+    .search-result-item-heading {
+        margin: 0
+    }
+}
+
+@media (min-width:768px) {
+    .search-result-item .image-link {
+        display: inline-block;
+        margin: -20px 0 -20px -20px;
+        float: left;
+        width: 200px
+    }
+}
+
+@media (max-width:767px) {
+    .search-result-item .image-link {
+        max-height: 200px
+    }
+}
 
 input[type=text], select, textarea {
     width: 100%;
@@ -75,6 +101,8 @@ input[type=submit] {
     background-color: #f1f1f1;
     width: 20%;
     height: 100%;
+    position: fixed;
+    overflow: auto;
 }
 
     /* Style the buttons that are used to open the tab content */

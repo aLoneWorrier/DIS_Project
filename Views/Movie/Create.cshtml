@@ -5,110 +5,115 @@
 }
 
 <div class="container">
-    <form method="post" asp-controller="Movie" asp-action="Create">
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="Title" id="here">Movie Name</label>
-            </div>
-            <div class="col-75">
-                <input placeholder="Movie Name" asp-for="Title" type="text" class="validate">
-                <span asp-validation-for="Title" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="ImdbId" id="here">Movie IMDB Code</label>
-            </div>
-            <div class="col-75">
-                <input placeholder="IMDB Code" asp-for="ImdbId" type="text" class="validate">
-                <span asp-validation-for="ImdbId" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="Year" id="here">Released Year</label>
-            </div>
-            <div class="col-75">
-                <input placeholder="Year of Release" asp-for="Year" type="text" class="validate">
-                <span asp-validation-for="Year" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="Director" id="here">Director Name</label>
-            </div>
-            <div class="col-75">
-                <input placeholder="Name of the Director" asp-for="Director" type="text" class="validate">
-                <span asp-validation-for="Director" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="URL" id="here">Movie Wikipedia Page URL</label>
-            </div>
-            <div class="col-75">
-                <input placeholder="https://www.wikipedia.com" asp-for="URL" type="text" class="validate">
-                <span asp-validation-for="URL" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="imageURL" id="here">Movie image URL</label>
-            </div>
-            <div class="col-75">
-                <input placeholder="https://www.imageurl.com" asp-for="imageURL" type="text" class="validate">
-                <span asp-validation-for="imageURL" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="Description" id="here">Short plot of the Movie</label>
-            </div>
-            <div class="col-75">
-                <textarea asp-for="Description" placeholder="Short plot..." style="height:150px"></textarea>
-                <span asp-validation-for="Description" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="ImdbRating" id="here">IMDB Ratings of the Movie</label>
-            </div>
-            <div class="col-75">
-                <textarea asp-for="ImdbRating" class="materialize-textarea"></textarea>
-                <span asp-validation-for="ImdbRating" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="GenreNames" id="here">Genre</label>
-            </div>
-            <div class="col-75">
-                <select multiple asp-for="GenreNames">
-                    @foreach (var item in ViewBag.genreDict.Keys)
-                    {
-        <option value="@item">@ViewBag.genreDict[item]</option>
+    <div class="card">
+        <div class="card-content">
+            <form method="post" asp-controller="Movie" asp-action="Create">
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="Title" id="here">Movie Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="Movie Name" asp-for="Title" type="text" class="validate">
+                        <span asp-validation-for="Title" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="ImdbId" id="here">Movie IMDB Code</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="IMDB Code" asp-for="ImdbId" type="text" class="validate">
+                        <span asp-validation-for="ImdbId" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="Year" id="here">Released Year</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="Year of Release" asp-for="Year" type="text" class="validate">
+                        <span asp-validation-for="Year" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="Director" id="here">Director Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="Name of the Director" asp-for="Director" type="text" class="validate">
+                        <span asp-validation-for="Director" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="URL" id="here">Movie Wikipedia Page URL</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="https://www.wikipedia.com" asp-for="URL" type="text" class="validate">
+                        <span asp-validation-for="URL" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="imageURL" id="here">Movie image URL</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="https://www.imageurl.com" asp-for="imageURL" type="text" class="validate">
+                        <span asp-validation-for="imageURL" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="Description" id="here">Short plot of the Movie</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea asp-for="Description" placeholder="Short plot..." style="height:150px"></textarea>
+                        <span asp-validation-for="Description" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="ImdbRating" id="here">IMDB Ratings of the Movie</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea asp-for="ImdbRating" class="materialize-textarea"></textarea>
+                        <span asp-validation-for="ImdbRating" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="GenreNames" id="here">Genre</label>
+                    </div>
+                    <div class="col-75">
+                        <select multiple asp-for="GenreNames">
+                            @foreach (var item in ViewBag.genreDict.Keys)
+                            {
+                                <option value="@item">@ViewBag.genreDict[item]</option>
+                            }
+                        </select>
+                        <span asp-validation-for="GenreNames" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label asp-for="ActorNames" id="here">Actors</label>
+                    </div>
+                    <div class="col-75">
+                        <select multiple asp-for="ActorNames">
+                            @foreach (var item in ViewBag.actorNames)
+                            {
+                                <option value="@item">@item</option>
 }
-                </select>
-                <span asp-validation-for="GenreNames" class="red-text"></span>
-            </div>
+                        </select>
+                        <span asp-validation-for="ActorNames" class="red-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col-25">
-                <label asp-for="ActorNames" id="here">Actors</label>
-            </div>
-            <div class="col-75">
-                <select multiple asp-for="ActorNames">
-                    @foreach (var item in ViewBag.actorNames)
-                    {
-        <option value="@item">@item</option>}
-                </select>
-                <span asp-validation-for="ActorNames" class="red-text"></span>
-            </div>
-        </div>
-        <div class="row">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+    </div> 
 </div>
 
 @*<div class="container">
