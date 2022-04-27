@@ -81,42 +81,6 @@
             }
         </div>
     </div> 
-    @*<div class="container">
-                        <div class="row">
-                            <div class="row s12 center-align">
-                                <h4>Following are available to watch </h4>
-                            </div>
-
-                            @foreach (var item in Model)
-                            {
-                    <div class="row s12">
-                        <div class="card">
-                            <div class="column card-content">
-                                <div class="row">
-                                    <div class="col s12">
-                                        <span class="card-title">
-                                            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src=@Html.DisplayFor(modelItem => item.imageURL) />
-                                            <a href="@item.URL">@Html.DisplayFor(modelItem => item.Title)</a> &emsp; <div class="chip">@Html.DisplayFor(modelItem => item.ImdbRating)</div>
-                                            &emsp; @foreach (var s in item.Genres)
-                                            {<div class="chip">@Html.DisplayFor(modelItem => s.Genre.GenreName)</div>}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s12">
-                                        @Html.DisplayFor(modelItem => item.Description)
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-group card-action">
-                                <a asp-action="Details" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">More Details</a>
-                                <a asp-action="Edit" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">Update</a>
-                                <a asp-action="Delete" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">Delete</a>
-                            </div>
-                        </div>
-                    </div>}
-                        </div>
-                    </div>*@
 
                     <style>
                         body {
