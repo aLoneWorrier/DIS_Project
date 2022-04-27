@@ -6,11 +6,18 @@
         <img src="~/img/home4.jpg" style="height:450px" class="banner">
     </div>
     <div class="container-fluid1 bg-2 text-center">
+        <h3 class="margin">Who am I?</h3>
+        <p>This is a website that contains the list of IMDB listed movies, integrated with the IMDB-API. The IMDb-API is a web service for receiving movie and cast information. APIs results is a JSON and includes items such as movie specifications, images, posters, ratings, Wikipedia page content and more.</p>
+        <p><b>IMDb (Internet Movie Database)</b> is an online database of information related to films, television programs, home videos, video games, and streaming content online – including cast, production crew and personal biographies, plot summaries, trivia, fan and critical reviews, and ratings. An additional fan feature, message boards, was abandoned in February 2017. Originally a fan-operated website, the database is owned and operated by IMDb.com, Inc., a subsidiary of Amazon.</p>
         <h3 class="margin">Want to find a Movie?</h3>
-        <p>Go to the below link and search for a movie listed in our database by entering the keyfields.</p>
         <p>Go to the below link and search for a movie listed in our database by entering the keyfields.</p>
         <a asp-controller="Movie" asp-action="Search" class="btn btn-default btn-lg">
             <span class="glyphicon glyphicon-search"></span> Search
+        </a>
+        <h3 class="margin">Want to Add a Movie which isn't Listed?</h3>
+        <p>Feel free to click the below link and create a movie by entering the keyfields.</p>
+        <a asp-controller="Movie" asp-action="Create" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-search"></span> Create
         </a>
     </div>
 </body>

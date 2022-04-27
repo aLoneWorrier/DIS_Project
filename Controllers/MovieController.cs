@@ -287,7 +287,7 @@ namespace Project.Controllers
 
                     dbContext.Update(mToBeUpdated);
                     await dbContext.SaveChangesAsync();
-                    return RedirectToAction(nameof(Thanks), new { message = "Thanks for helping us to grow our database!" });
+                    return RedirectToAction(nameof(Thanks), new { message = "Thanks for adding a movie and keeping our database up-to-date!" });
                 }
             }
             catch (DbUpdateException /* ex */)
@@ -336,7 +336,7 @@ namespace Project.Controllers
             {
                 dbContext.movies.Remove(m);
                 await dbContext.SaveChangesAsync();
-                return RedirectToAction(nameof(Thanks), new { message = "Thanks! The record has been deleted." });
+                return RedirectToAction(nameof(Thanks), new { message = "Thanks! The movie has been deleted." });
             }
             catch (DbUpdateException /* ex */)
             {

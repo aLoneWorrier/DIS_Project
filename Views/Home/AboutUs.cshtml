@@ -1,8 +1,8 @@
 ﻿@{ ViewData["Title"] = "About Us"; }
 
 <div class="tab">
-    <button class="tablinks" onclick="openLink(event, 'Devs')">Meet the Devs</button>
-    <button class="tablinks" onclick="openLink(event, 'DataModel')" id="defaultOpen">Data Model and Description</button>
+    <button class="tablinks" onclick="openLink(event, 'Devs')" id="defaultOpen">Meet the Devs</button>
+    <button class="tablinks" onclick="openLink(event, 'DataModel')">Data Model and Description</button>
 </div>
 
 <div id="Devs" class="tabcontent">
@@ -36,16 +36,16 @@
     <img id="modelimg" src="~/img/erd.png">
     <p>
         We have used <b>IMDB-API</b> application programming interface.
-        All the api documents and usage guides are available <a href="https://imdb-api.com/api">here.</a>
+        API Documentation is available <a href="https://imdb-api.com/api">here.</a>
     </p>
     <p>
-        The data model essentially contains two many-to-many relationships. One between the entity <b><i>Movie</i></b>
-        and <b><i>Genres</i></b> and another between <b><i>Movie</i></b> and <b><i>Actor</i></b>. To facilitate
-        easy transition from logical model to stuctural schema diagram, we have broken down each many-to-many relationship with
+        The data model consists of two many-to-many relationships. One between <b><i>Movie class</i></b>
+        and <b><i>Genres class</i></b>, Second between <b><i>Movie class</i></b> and <b><i>Actor class</i></b>. To tranform
+        these two many to many relationships, we have broken down both many-to-many relationship with
         two one-to-many relationships.
     </p>
     <p>
-        Below are the api end-points we have used.
+        Below are the api end-points we have utilized.
     </p>
     <b>GET/</b> https://imdb-api.com/en/API/Top250Movies/k_o1j7e1n9 <br>
     <b>GET/</b> https://imdb-api.com/en/API/Title/k_o1j7e1n9/tt0110413 <br>

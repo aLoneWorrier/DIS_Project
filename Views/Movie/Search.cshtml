@@ -13,7 +13,7 @@
                     <form asp-action="Search" method="get">
                         <div class="row center-align">
                             <h5>Find A Movie To Watch!</h5>
-                            <h6>(Enter at least one field. For the movie name you can enter partial phrases.)</h6>
+                            <h6>(Enter at least one field)</h6>
                         </div>
                         <div class="row">
                             <div class="col m6">
@@ -57,7 +57,7 @@
                     <div class="row">
                         <div class="row s12">
                             <span class="card-title">
-                                <b><i>@Html.DisplayFor(modelItem => item.Title)</i></b>
+                                <a href="@item.URL"><b><i>@Html.DisplayFor(modelItem => item.Title)</i></b></a>
                                 &emsp; <div class="chip">@Html.DisplayFor(modelItem => item.ImdbRating)</div>
                                  @foreach (var s in item.Genres)
                                 {<div class="chip">@Html.DisplayFor(modelItem => s.Genre.GenreName)</div>}
