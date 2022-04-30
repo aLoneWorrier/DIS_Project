@@ -50,25 +50,29 @@
     <div class="card">
         <div class="column card-content">
             <div class="row">
-                <div class="col-sm-2">
-                    <img class="" width="150" height="100%" src=@Html.DisplayFor(modelItem => item.imageURL) />
+                <div class="col-md-2">
+                    <div class="row m12">
+                        <img class="" width="150" height="100%" src=@Html.DisplayFor(modelItem => item.imageURL) />
+                    </div>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <div class="row">
-                        <div class="row s12">
+                        <div class="row m12">
                             <span class="card-title">
-                                <a href="@item.URL"><b><i>@Html.DisplayFor(modelItem => item.Title)</i></b></a>
-                                &emsp; <div class="chip">@Html.DisplayFor(modelItem => item.ImdbRating)</div>
-                                 @foreach (var s in item.Genres)
-                                {<div class="chip">@Html.DisplayFor(modelItem => s.Genre.GenreName)</div>}
+                                <p>
+                                    <a href="@item.URL"><b><i>@Html.DisplayFor(modelItem => item.Title)</i></b></a>
+                                    &emsp; <div class="chip">@Html.DisplayFor(modelItem => item.ImdbRating)</div>
+                                    @foreach (var s in item.Genres)
+                                    {<div class="chip">@Html.DisplayFor(modelItem => s.Genre.GenreName)</div>}
+                                </p>
                             </span>      
                         </div>
-                        <div class="row s12">
+                        <div class="row m12">
                             @Html.DisplayFor(modelItem => item.Description)
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <div class="btn-group-vertical card-action">
                             <a asp-action="Details" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">Details</a><br />
                             <a asp-action="Edit" asp-route-id="@item.ImdbId" class="btn waves-effect waves-light">Update</a><br />

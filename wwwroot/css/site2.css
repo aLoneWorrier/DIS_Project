@@ -9,27 +9,6 @@
     }
 }
 
-@media (min-width:768px) {
-    .search-result-item-heading {
-        margin: 0
-    }
-}
-
-@media (min-width:768px) {
-    .search-result-item .image-link {
-        display: inline-block;
-        margin: -20px 0 -20px -20px;
-        float: left;
-        width: 200px
-    }
-}
-
-@media (max-width:767px) {
-    .search-result-item .image-link {
-        max-height: 200px
-    }
-}
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
